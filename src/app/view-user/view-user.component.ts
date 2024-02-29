@@ -28,7 +28,6 @@ export class ViewUserComponent implements AfterViewInit, OnInit {
   [x: string]: any;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  // @ViewChild(MatTableExporterDirective, { static: true }) exporter: MatTableExporterDirective;
   private modalService = inject(NgbModal);
 
   user: User = new User(0, 0, "", "", "", 0);

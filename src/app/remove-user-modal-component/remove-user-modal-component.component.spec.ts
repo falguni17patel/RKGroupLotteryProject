@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RemoveUserModalComponentComponent } from './remove-user-modal-component.component';
 
 describe('RemoveUserModalComponentComponent', () => {
