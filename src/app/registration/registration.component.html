@@ -1,0 +1,62 @@
+
+
+<div class="container mt-4">
+    <h1 class="text-center">User Form</h1>
+    <form [formGroup]="registerform">
+        <div class="mb-3">
+            <label for="ticketNo" class="form-label">Ticket Number</label>
+            <input type="text" class="form-control" id="ticketNo"  placeholder="Ticket Number" formControlName="ticketNo" [ngClass]="{error:getControl('ticketNo')?.errors && getControl('ticketNo')?.touched}">
+            <div *ngIf="getControl('ticketNo')?.errors && getControl('ticketNo')?.touched">
+            <small class="text-danger" *ngIf="getControl('ticketNo')?.errors?.['required']">Ticket number is required</small>
+            <small class="text-danger" *ngIf="getControl('ticketNo')?.errors?.['maxlength']">Only 10 digits are allowed</small>
+            <small class="text-danger" *ngIf="getControl('ticketNo')?.errors?.['pattern']">Only numbers allowed</small>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="fname"   placeholder="First Name" formControlName="fname" [ngClass]="{error:getControl('fname')?.errors && getControl('fname')?.touched}">
+            <div *ngIf="getControl('fname')?.errors && getControl('fname')?.touched">
+                <small class="text-danger" *ngIf="getControl('fname')?.errors?.['required']">First Name is required</small>
+                <small class="text-danger" *ngIf="getControl('fname')?.errors?.['maxlength']">Only 32 characters are allowed</small>
+               
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">last Name</label>
+            <input type="text" class="form-control" id="lname"  placeholder="last Name" formControlName="lname" [ngClass]="{error:getControl('lname')?.errors && getControl('lname')?.touched}">
+            <div *ngIf="getControl('lname')?.errors && getControl('lname')?.touched">
+                <small class="text-danger" *ngIf="getControl('lname')?.errors?.['required']">Last name is required</small>
+                <small class="text-danger" *ngIf="getControl('lname')?.errors?.['maxlength']">Only 32 characters are allowed</small>
+               
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Address" formControlName="address" [ngClass]="{error:getControl('address')?.errors && getControl('address')?.touched}">
+            <div *ngIf="getControl('address')?.errors && getControl('address')?.touched">
+                <small class="text-danger" *ngIf="getControl('address')?.errors?.['required']">Address is required</small>
+                <small class="text-danger" *ngIf="getControl('address')?.errors?.['maxlength']">Only 50 characters are allowed</small>
+               
+                </div>
+        </div>
+        <div class="mb-3">
+            <label for="contactNo" class="form-label">Contact Number</label>
+            <input type="text" class="form-control" id="contactNo" placeholder="Contact Number" formControlName="contactNo" [ngClass]="{error:getControl('contactNo')?.errors && getControl('contactNo')?.touched}">
+            <div *ngIf="getControl('contactNo')?.errors && getControl('contactNo')?.touched">
+                <small class="text-danger" *ngIf="getControl('contactNo')?.errors?.['required']">Contact number is required</small>
+                <small class="text-danger" *ngIf="getControl('contactNo')?.errors?.['maxlength']">Maximum 10 digits are allowed</small>
+                <small class="text-danger" *ngIf="getControl('contactNo')?.errors?.['minlength']">Minimum 10 digits are allowed</small>
+                <small class="text-danger" *ngIf="getControl('contactNo')?.errors?.['pattern']">Only numbers allowed</small>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <input class="btn btn-success" type="submit" name="submit_reg" [disabled]="registerform.status=== 'INVALID'"   value="Register" (click)="registerNow()">
+            
+        </div>
+
+</form>
+</div>
+
+    
+
